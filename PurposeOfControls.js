@@ -1,13 +1,21 @@
-javascript:(function() {
-    
-    function callback() {
+(function() {
 
-    	alert("Hi John");
+	function walk(node) { 
+		
+		if(node.title !== undefined && node.title != "") {
+			var newElement = document.createElement('span')
+			newElement.innerHTML = node.title
+			newElement.style = "background-color: black; color:white; position:absolute; top:0px; left:0px;"
+			node.appendChild(newElement)
+			node.style += " position:relative;"
+		}
 
-    }
 
-    var s = document.createElement("script");
+		for (let child of node.childNodes) {  
+			walk(child) 
+		} 
+	}
 
-    s.addEventListener ? s.addEventListener("load", callback, !1) : s.readyState && (s.onreadystatechange = callback), s.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js", document.body.appendChild(s);
+	walk(document.body)
 
 })()
