@@ -1,4 +1,4 @@
-(function() {
+javascript:(function() {
     
     function callback() {
 
