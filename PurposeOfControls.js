@@ -5,7 +5,7 @@
 		if(node.title !== undefined && node.title != "") {
 			var newElement = document.createElement('span')
 			newElement.innerHTML = node.title
-			newElement.style = "background-color: black; color:white; position:absolute; top:0px; left:0px;"
+			newElement.style = "background-color: black; color:white; padding: 3px; position:relative; top:0px; left:0px;"
 			node.appendChild(newElement)
 			node.style += " position:relative;"
 		}
